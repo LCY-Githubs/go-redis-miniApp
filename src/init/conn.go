@@ -1,6 +1,8 @@
 package init
 
 import (
+	"fmt"
+
 	"github.com/go-redis/redis"
 )
 
@@ -15,4 +17,7 @@ func initClient() error {
 		DB:       0,
 	})
 	return nil
+}
+func Prints() {
+	fmt.Println("Hello I am init")
 }
