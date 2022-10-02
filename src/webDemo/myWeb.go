@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func Start() {
@@ -37,4 +39,12 @@ func MyWebApp1(writer http.ResponseWriter, request *http.Request) {
 		log.Fatal(err)
 	}
 	fmt.Println("/app1")
+}
+
+func StartGin() {
+	r := gin.Default()
+	r.GET("/11", func(c *gin.Context) {
+		c.String(200, "Hello, Geektutu")
+	})
+	r.Run() // listen and serve on 0.0.0.0:8080
 }

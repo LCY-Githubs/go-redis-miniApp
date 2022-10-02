@@ -7,6 +7,9 @@ type CommonRes struct {
 }
 
 func NewSuccessRes(data interface{}) CommonRes {
-	a := CommonRes{200, "success", data}
-	return a
+	return CommonRes{200, "success", data}
+}
+
+func NewErrorRes(data interface{}) CommonRes {
+	return CommonRes{500, "failed", data}
 }
