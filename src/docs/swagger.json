@@ -1,0 +1,85 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "这里是描述",
+        "title": "gin+gorm crud 测试swagger",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/user/edit": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "分页列表",
+                "tags": [
+                    "编辑名称"
+                ],
+                "summary": "用户信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name",
+                        "name": "name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/info": {
+            "get": {
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "description": "得到信息",
+                "tags": [
+                    "编辑名称"
+                ],
+                "summary": "用户信息",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name",
+                        "name": "name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/api/user/post": {
+            "post": {
+                "description": "postTest",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "测试post"
+                ],
+                "summary": "用户信息提交",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "name",
+                        "name": "message",
+                        "in": "formData"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

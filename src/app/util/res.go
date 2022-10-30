@@ -1,23 +1,14 @@
 package util
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
-var Default = &response{}
+func OK(r *gin.Context, msg string, data interface{}) {
+	r.JSON(http.StatusOK, CommonRes{Msg: msg, Data: data})
+}
 
-//通常成功数据处理
-func OK(c *gin.Context, data interface{}, msg string) {
-	r := Default.Clone()
-	r.SetData(data)
-	r.SetSuccess(true)
-	if msg != "" {
-		r.SetMsg(msg)
-	}
-	r.SetCode(http.StatusOK)
-	c.Set("result", r)
-	c.Set("status", http.StatusOK)
-	c.AbortWithStatusJSON(http.StatusOK, r)
+func FAIL(r *gin.Context) {
+	r.JSON(http.StatusInternalServerError, CommonRes{Msg: "FAIL"})
 }

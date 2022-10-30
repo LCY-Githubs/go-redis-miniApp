@@ -1,10 +1,16 @@
 package main
 
 import (
-	router "src/app/routers"
+	"src/app/routers"
 )
 
+// @version 1.0
+// @title gin+gorm crud 测试swagger
+// @description 这里是描述
 func main() {
-	// webDemo.Start()
-	router.InitRouterFunc()
+	router := routers.Router{}
+	//gin init
+	router.Init()
+	//connect to mysql server
+	//conn.InitMysqlClientConnection()
 }

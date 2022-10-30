@@ -1,0 +1,53 @@
+info:
+  contact: {}
+  description: 这里是描述
+  title: gin+gorm crud 测试swagger
+  version: "1.0"
+paths:
+  /api/user/edit:
+    get:
+      description: 分页列表
+      parameters:
+      - description: name
+        in: query
+        name: name
+        type: string
+      responses: {}
+      security:
+      - Bearer: []
+      summary: 用户信息
+      tags:
+      - 编辑名称
+  /api/user/info:
+    get:
+      description: 得到信息
+      parameters:
+      - description: name
+        in: query
+        name: name
+        type: string
+      responses: {}
+      security:
+      - Bearer: []
+      summary: 用户信息
+      tags:
+      - 编辑名称
+  /api/user/post:
+    post:
+      description: postTest
+      parameters:
+      - description: name
+        in: formData
+        name: message
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 用户信息提交
+      tags:
+      - 测试post
+swagger: "2.0"
